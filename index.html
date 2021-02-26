@@ -1,0 +1,1062 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Demo</title>
+    <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/common-v1.0.js" charset="utf-8"></script>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>
+                <a onclick="unfoldAndFoldUl('demo1ul')">
+                    快速入门
+                </a>
+                <p>
+                    笔记
+                </p>
+                <ul id="demo1ul">
+                    <li>
+                        <a href="./example/demo1/index1.html">
+                            第一个3D场景
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            旋转动画、requestAnimationFrame周期性渲染
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo1/index2-1.html">
+                                    setInterval()周期性调用render方法
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo1/index2-2.html">
+                                    立方体旋转动画
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo1/index2-3.html">
+                                    requestAnimationFrame两帧渲染时间间隔
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo1/index2-4.html">
+                                    增加两帧之间计算资源
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            鼠标操作三维场景旋转缩放
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo1/index3-1.html">
+                                    鼠标操作三维场景旋转缩放
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo1/index3-2.html">
+                                    requestAnimationFrame周期性渲染
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo1/index3-3.html">
+                                    框架1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo1/index3-4.html">
+                                    框架2
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            场景插入新的几何体
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo1/index4-1.html">
+                                    立方体、球体、圆柱、正多面体
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo1/index4-2.html">
+                                    插入多个几何体并偏移
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            设置材质效果
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo1/index5-1.html">
+                                    创建材质对象
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo1/index5-2.html">
+                                    半透明效果
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            光照效果设置
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo1/index6-1.html">
+                                    光源对象创建
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo1/index6-2.html">
+                                    点光源位置设置
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a onclick="unfoldAndFoldUl('demo2ul')">
+                    顶点概念、几何体结构
+                </a>
+                <p>
+                    笔记
+                </p>
+                <ul id="demo2ul">
+                    <li>
+                        <a href="./example/demo2/index1.html">
+                            顶点位置数据解析渲染
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            顶点颜色数据插值计算
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo2/index2-1.html">
+                                    每个顶点显示一种颜色
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo2/index2-2.html">
+                                    彩色线条
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo2/index2-3.html">
+                                    彩色三角面
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./example/demo2/index3.html">
+                            顶点法向量数据光照计算
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            顶点索引复用顶点数据
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo2/index4-1.html">
+                                    矩形非索引绘制
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo2/index4-2.html">
+                                    矩形索引绘制
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            设置Geometry顶点位置、顶点颜色数据
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo2/index5-1.html">
+                                    Vector3定义顶点数据
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo2/index5-2.html">
+                                    定义顶点颜色数据
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            Face3对象定义Geometry的三角面
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo2/index6-1.html">
+                                    设置Face3顶点索引、法向量
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo2/index6-2.html">
+                                    Face3颜色和geometry的colors属性
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            访问几何体对象的数据
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo2/index7-1.html">
+                                    访问几何体对象的数据
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo2/index7-2.html">
+                                    设置立方体顶点颜色
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo2/index7-3.html">
+                                    删除立方体一个面
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./example/demo2/index8.html">
+                            旋转平移缩放变换、复制、克隆
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a onclick="unfoldAndFoldUl('demo3ul')">
+                    材质对象
+                </a>
+                <p>
+                    笔记
+                </p>
+                <ul id="demo3ul">
+                    <li>
+                        <a>
+                            常用材质介绍
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo3/index1-1.html">
+                                    点材质
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo3/index1-2.html">
+                                    网格材质
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo3/index1-3.html">
+                                    线材质
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./example/demo3/index2.html">
+                            材质属性
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a onclick="unfoldAndFoldUl('demo4ul')">
+                    点线面模型对象
+                </a>
+                <p>
+                    笔记
+                </p>
+                <ul id="demo4ul">
+                    <li>
+                        <a>
+                            点、线、面模型介绍
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo4/index1-1.html">
+                                    点模型
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo4/index1-2.html">
+                                    线模型
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo4/index1-3.html">
+                                    网格模型
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./example/demo3/index2.html">
+                            材质属性
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a onclick="unfoldAndFoldUl('demo5ul')">
+                    光照对象
+                </a>
+                <p>
+                    笔记
+                </p>
+                <ul id="demo5ul">
+                    <li>
+                        <a>
+                            光照原理和常见光源类型
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo5/index1-1.html">
+                                    环境光、点光源
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo5/index1-2.html">
+                                    聚光光源、方向光
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo5/index1-3.html">
+                                    聚光光源、方向光target属性
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            光照阴影
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo5/index2-1.html">
+                                    平行光阴影
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo5/index2-2.html">
+                                    聚光光源阴影
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            基类Light和Object3D
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo5/index3-1.html">
+                                    光照强度设置
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a onclick="unfoldAndFoldUl('demo6ul')">
+                    层级模型、树结构
+                </a>
+                <p>
+                    笔记
+                </p>
+                <ul id="demo6ul">
+                    <li>
+                        <a href="./example/demo6/index1.html">
+                            组对象Group、层级模型
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./example/demo6/index2.html">
+                            对象节点命名、查找、遍历
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./example/demo6/index3.html">
+                            本地位置坐标、世界位置坐标
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a onclick="unfoldAndFoldUl('demo7ul')">
+                    几何体对象、曲线、三维建模
+                </a>
+                <p>
+                    笔记
+                </p>
+                <ul id="demo7ul">
+                    <li>
+                        <a>
+                            圆弧线绘制(直线、椭圆、圆弧)、基类Curve
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo7/index1-1.html">
+                                    ArcCurve绘制圆弧
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo7/index1-2.html">
+                                    手动生成圆弧顶点
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo7/index1-3.html">
+                                    直线
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            样条曲线、贝赛尔曲线
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo7/index2-1.html">
+                                    CatmullRomCurve3
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo7/index2-2.html">
+                                    CubicBezierCurve3（三维三次贝塞尔曲线）
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo7/index2-3.html">
+                                    QuadraticBezierCurve3（三维二次贝塞尔曲线）
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            多个线条组合曲线CurvePath
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo7/index3-1.html">
+                                    组合曲线CurvePath
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            曲线路径管道成型TubeGeometry
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo7/index4-1.html">
+                                    曲线Curve创建路径
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo7/index4-2.html">
+                                    CurvePath多段路径生成管道
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            旋转成型LatheGeometry
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo7/index5-1.html">
+                                    旋转成型
+                                </a>
+                                <p>
+                                    通过3个以上二维点（两条以上线段），形成的一个二维面，之后通过旋转方式，生成一个旋转轮廓。
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo7/index5-2.html">
+                                    样条曲线插值计算生成旋转轮廓
+                                </a>
+                                <p>相比于直接使用3个以上Vector2创建的旋转轮廓，通过先生成二维样条曲线SplineCurve，然后再通过分段来获取顶点，最后通过得到的顶点生成旋转轮廓，这样可以得到一个曲线的旋转轮廓，（前一种由于点之间距离很长，视觉上就是直线，不够美观。）
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            Shape对象和轮廓填充ShapeGeometry
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo7/index6-1.html">
+                                    填充顶点构成的轮廓
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo7/index6-2.html">
+                                    shape外轮廓内轮廓
+                                </a>
+                                <p>使用Shape创建形状，并使用arc方法设置形状参数，以实现基本的外轮廓；使用Path创建路径的方式，绘制出内轮廓；将内轮廓的Path对象插入到shape.holes（外轮廓）中。
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo7/index6-3.html">
+                                    多个轮廓同时填充
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo7/index6-4.html">
+                                    河南地图顶点轮廓填充
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            拉伸扫描成型ExtrudeGeometry
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo7/index7-1.html">
+                                    拉伸
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo7/index7-2.html">
+                                    扫描
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo7/index7-3.html">
+                                    拉伸内外轮廓绘制
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo7/index7-4.html">
+                                    多个shape
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a onclick="unfoldAndFoldUl('demo8ul')">
+                    纹理贴图
+                </a>
+                <p>
+                    笔记
+                </p>
+                <ul id="demo8ul">
+                    <li>
+                        <a>
+                            创建纹理贴图
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo8/index1-1.html">
+                                    创建纹理贴图
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo8/index1-2.html">
+                                    ImageLoader和Texture
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            UV映射原理(顶点纹理坐标)
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo8/index2-1.html">
+                                    重置几何体纹理坐标
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo8/index2-2.html">
+                                    Geometry创建三角面设置UV坐标
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo8/index2-3.html">
+                                    BufferGeometry设置纹理坐标uv
+                                </a>
+                                <p>
+                                    该类是一个 几何模型(Geometry) 的高效替代，因为它使用缓存（buffer）来保存所有数据，包括顶点位置、面索引、法向量、颜色、UVs以及自定义属性。
+                                    这节约了向GPU传递全部这些数据的成本。但同时也使得BufferGeometry要比 几何模型(Geometry)
+                                    更难以处理，不是以对象的方式来访问，比如使用Vector3来访问位置数据， 以Color对象来访问颜色数据，你得从相应的attribute缓存中访问原始数据。
+                                    这使得BufferGeometry很适合用来存储静态对象，也就是当我们创建完模型实例后不太需要去操作它。
+                                    <br>
+                                    WebGL 把和每个顶点模型关联的数据保存在 属性（attributes） 中。 比如顶点位置、顶点法向量、顶点颜色等。当使用 几何模型(Geometry)
+                                    时，renderer 负责封装这些信息到有类型数组缓存中并发送该数据到着色器。 当使用BufferGeometry时，所有这些和独立属性关联的数据都被保存进缓存中。
+                                    举例来说，这意味着为了获取一个顶点的关联位置数据，你必须调用 .getAttribute 来访问 'position'
+                                    attribute，然后可以访问该位置属性的x/y/z坐标值。
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo8/index2-4.html">
+                                    加载包含uv的外部模型
+                                </a>
+                                <p>
+                                    ObjectLoader：用于加载JSON资源的加载器。和 JSON加载器(JSONLoader)不同，这个加载器使用对象的 .type 属性来映射到它们的原有类。
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            数组材质、材质索引materialIndex
+                        </a>
+                        <p>
+                            材质索引materialIndex相关总结
+                            <ul>
+                                <li>
+                                    Geometry
+                                    <ul>
+                                        <li>三角面Face3
+                                            <ul>
+                                                <li>材质materialIndex属性</li>
+                                                <li>材质索引materialIndex</li>
+                                                <li>一个几何体对象的不同三角面Face3可以通过材质索引设置不同材质</li>
+                                            </ul>
+                                        </li>
+                                        <li>threejs立方体、球体等几何体API都有默认的材质索引设置materialIndex</li>
+                                        <li>BoxGeometry
+                                            <ul>
+                                                <li>默认每一个面包含的Face3对应一个材质对象</li>
+                                                <li>纹理贴图
+                                                    <p>每一个面都采集整张纹理贴图</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>默认数组材质需要材质对象元素数量
+                                            <ul>
+                                                <li>球体、平面：1</li>
+                                                <li>圆柱体：3</li>
+                                                <li>立方体：6</li>
+                                            </ul>
+                                        </li>
+                                        <li>所谓数组材质
+                                            <p>就是threejs几何体API的算法自动设置系列Face3的材质索引属性materialIndex</p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    BufferGeometry
+                                    <p>Groups属性</p>
+                                    <ul>
+                                        <li>.groups：Array</li>
+                                        <li>元素
+                                            <ul>
+                                                <li>{start: Integer, count: Integer,materialIndex: Integer}</li>
+                                                <li>材质索性materialIndex</li>
+                                                <li>材质count对应顶点数量</li>
+                                                <li>start对应第几个顶点的下标</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>材质索引作用
+                                    <ul>
+                                        <li>一个几何体对象不同三角形可以对应不同材质</li>
+                                        <li>或者说一个网格模型可以具有多个材质对象</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+                        <ul>
+                            <li>
+                                <a href="./example/demo8/index3-1.html">
+                                    数组材质
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo8/index3-2.html">
+                                    自定义Face3的材质索引
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo8/index3-3.html">
+                                    几何体平面局部设置纹理贴图
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            纹理对象Texture(阵列、偏移、旋转...)
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo8/index4-1.html">
+                                    阵列设置重复纹理
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo8/index4-2.html">
+                                    纹理偏移
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo8/index4-3.html">
+                                    纹理旋转
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo8/index4-4.html">
+                                    草地效果
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo8/index4-5.html">
+                                    纹理移动动画效果
+                                </a>
+                                <p>设置贴图平铺，并在render()渲染时，设置偏移texture.offset，达到移动效果。需要注意的是，必须调用浏览器的requestAnimationFrame间隔时间render()渲染。
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            canvas画布、视频作为纹理贴图
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo8/index5-1.html">
+                                    canvas代码
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo8/index5-2.html">
+                                    canvas画布作为纹理贴图
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo8/index5-3.html">
+                                    视频作为纹理贴图
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            凹凸贴图、法线贴图(压缩模型)
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo8/index6-1.html">
+                                    法线贴图
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo8/index6-2.html">
+                                    凹凸贴图
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo8/index6-3.html">
+                                    法向量——地球案例
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo8/index6-4.html">
+                                    法向量——枪案例
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            光照贴图添加阴影
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo8/index7-1.html">
+                                    阴影贴图
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo8/index7-2.html">
+                                    光照阴影实时计算
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            高光贴图
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo8/index8-1.html">
+                                    高光贴图
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo8/index8-2.html">
+                                    地球高光贴图案例
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            环境贴图
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo8/index9-1.html">
+
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            数据纹理对象DataTexture
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo8/index10-1.html">
+
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="./example/demo1/index.html">
+                    相机对象(投影方式)
+                </a>
+                <p>
+                    笔记
+                </p>
+            </li>
+            <li>
+                <a href="./example/demo1/index.html">
+                    点精灵、粒子系统
+                </a>
+                <p>
+                    笔记
+                </p>
+            </li>
+            <li>
+                <a href="./example/demo1/index.html">
+                    相机对象(投影方式)
+                </a>
+                <p>
+                    笔记
+                </p>
+            </li>
+            <li>
+                <a href="./example/demo1/index.html">
+                    帧动画模块
+                </a>
+                <p>
+                    笔记
+                </p>
+            </li>
+            <li>
+                <a href="./example/demo1/index.html">
+                    骨骼动画、变形动画
+                </a>
+                <p>
+                    笔记
+                </p>
+            </li>
+            <li>
+                <a href="./example/demo1/index.html">
+                    语音模块
+                </a>
+                <p>
+                    笔记
+                </p>
+            </li>
+            <li>
+                <a href="./example/demo1/index.html">
+                    模型文件加载
+                </a>
+                <p>
+                    笔记
+                </p>
+            </li>
+            <li>
+                <a href="./example/demo1/index.html">
+                    WebGL渲染器
+                </a>
+                <p>
+                    笔记
+                </p>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
+<!-- <script>
+    var catalogs = [{
+            pageUrl: './example/demo1/index.html',
+            title: '快速入门',
+            note: '',
+            subNode: [{
+                    pageUrl: '',
+                    title: '第一个3D场景',
+                    note: ''
+                },
+                {
+                    pageUrl: '',
+                    title: '旋转动画、requestAnimationFrame周期性渲染',
+                    note: ''
+                },
+                {
+                    pageUrl: '',
+                    title: '鼠标操作三维场景旋转缩放',
+                    note: ''
+                },
+                {
+                    pageUrl: '',
+                    title: '场景插入新的几何体',
+                    note: ''
+                },
+                {
+                    pageUrl: '',
+                    title: '设置材质效果',
+                    note: ''
+                },
+                {
+                    pageUrl: '',
+                    title: '光照效果设置',
+                    note: ''
+                }
+            ]
+        },
+        {
+            pageUrl: '',
+            title: '顶点概念、几何体结构',
+            note: ''
+        },
+        {
+            pageUrl: '',
+            title: '材质对象',
+            note: ''
+        },
+        {
+            pageUrl: '',
+            title: '点线面模型对象',
+            note: ''
+        },
+        {
+            pageUrl: '',
+            title: '光照对象',
+            note: ''
+        },
+        {
+            pageUrl: '',
+            title: '层级模型、树结构',
+            note: ''
+        },
+        {
+            pageUrl: '',
+            title: '几何体对象、曲线、三维建模',
+            note: ''
+        },
+        {
+            pageUrl: '',
+            title: '纹理贴图',
+            note: ''
+        },
+        {
+            pageUrl: '',
+            title: '相机对象(投影方式)',
+            note: ''
+        },
+        {
+            pageUrl: '',
+            title: '点精灵、粒子系统',
+            note: ''
+        },
+        {
+            pageUrl: '',
+            title: '帧动画模块',
+            note: ''
+        },
+        {
+            pageUrl: '',
+            title: '骨骼动画、变形动画',
+            note: ''
+        },
+        {
+            pageUrl: '',
+            title: '语音模块',
+            note: ''
+        },
+        {
+            pageUrl: '',
+            title: '模型文件加载',
+            note: ''
+        },
+        {
+            pageUrl: '',
+            title: 'WebGL渲染器',
+            note: ''
+        }
+    ]
+    // var ulCatelog = document.getElementsByTagName("ul")[0]
+    // var str = ''
+    // catalogs.forEach(catalog => {
+    //     if (catalog.subNode && catalog.subNode.length > 0) {
+
+    //     } else {
+    //         str += `<li>
+    //         <a href="${ catalog.pageUrl }">
+    //             ${ catalog.title }
+    //         </a>
+    //         <p>
+    //             ${ catalog.note }
+    //         </p>
+    //     </li>`
+    //     }
+    // })
+    // ulCatelog.innerHTML = str
+    // console.log(ulCatelog)
+</script> -->
