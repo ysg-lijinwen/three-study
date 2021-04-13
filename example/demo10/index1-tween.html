@@ -4,7 +4,7 @@
  * @Author: Kevin.Lee
  * @Date: 2021-04-09 09:51:07
  * @LastEditors: Kevin.Lee
- * @LastEditTime: 2021-04-09 17:44:35
+ * @LastEditTime: 2021-04-13 18:55:54
  * @FilePath: /maptalks.three-0.11.2/Users/lijinwen/study-p/doc/three-study/example/demo10/index1-tween.html
  * Copyright (C) 2021 Kevin.Lee. All rights reserved.
 -->
@@ -14,7 +14,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>透视投影相机</title>
+    <title>粒子动画</title>
     <!-- <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script> -->
     <script src="../../js/three.js"></script>
     <script src="../../js/controls/OrbitControls.js"></script>
@@ -62,7 +62,7 @@
             sprite.scale.set(4, 4, 1); // 只需要设置x、y两个分量就可以
             let k = Math.random() - 0.5;
             // 设置精灵模型位置，z轴的范围0~1000，便于观察随着距离变化，显示大小变化
-            sprite.position.set(150 * k, 150 * k, 100 * Math.random())
+            sprite.position.set(1500 * k, 1500 * k, 1000 * Math.random())
             // sprite.position.set(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1)
             // console.log('created')
             return sprite
@@ -89,6 +89,7 @@
         }
 
         scene.add(createSprite())
+
         var spriteGroup
 
         function createSpriteGroup() {
@@ -107,33 +108,33 @@
             let tweenSpriteUP = new TWEEN.Tween(obj.position)
                 .to({
                     x: obj.position.x,
-                    y: 20000,
+                    y: 200,
                     z: obj.position.z
                 }, 6000)
                 .easing(TWEEN.Easing.Cubic.Out);
             tweenSpriteUP.start();
             tweenSpriteUP.onComplete(function () {
-                // scene.remove(obj);
+                scene.remove(obj);
             });
 
-            for (var i = obj.children.length - 1; i >= 0; i--) {
-                let objMaterial = obj.children[i].material;
-                let tweenSpriteOpacity1 = new TWEEN.Tween(objMaterial)
-                    .to({
-                        opacity: 0.8
-                    }, 1000)
-                    .easing(TWEEN.Easing.Cubic.Out);
+            // for (var i = obj.children.length - 1; i >= 0; i--) {
+            //     let objMaterial = obj.children[i].material;
+            //     let tweenSpriteOpacity1 = new TWEEN.Tween(objMaterial)
+            //         .to({
+            //             opacity: 0.8
+            //         }, 1000)
+            //         .easing(TWEEN.Easing.Cubic.Out);
 
-                tweenSpriteOpacity1.start();
-                tweenSpriteOpacity1.onComplete(function () {
-                    let tweenSpriteOpacity2 = new TWEEN.Tween(objMaterial)
-                        .to({
-                            opacity: 0
-                        }, 1000)
-                        .easing(TWEEN.Easing.Cubic.Out);
-                    tweenSpriteOpacity2.start();
-                });
-            }
+            //     tweenSpriteOpacity1.start();
+            //     tweenSpriteOpacity1.onComplete(function () {
+            //         let tweenSpriteOpacity2 = new TWEEN.Tween(objMaterial)
+            //             .to({
+            //                 opacity: 0
+            //             }, 1000)
+            //             .easing(TWEEN.Easing.Cubic.Out);
+            //         tweenSpriteOpacity2.start();
+            //     });
+            // }
         }
 
         /**
@@ -174,10 +175,12 @@
             // let length = spriteGroup.children.length
             // console.log(spriteGroup)
             // for (let index = 0; index < length; index++) {
-            // console.log('执行遍历：' + index)
-            // tweenSprite(spriteGroup.children[index])
+            //     console.log('执行遍历：' + index)
+            //     tweenSprite(spriteGroup.children[index])
             // }
-            tweenSprite(scene.children[0])
+            let sprite = createSprite()
+            scene.add(sprite)
+            tweenSprite(sprite)
             TWEEN.update()
             requestAnimationFrame(render); //请求再次执行渲染函数render，渲染下一帧
         }
