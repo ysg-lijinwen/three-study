@@ -845,8 +845,13 @@
                         <ul>
                             <li>
                                 <a href="./example/demo8/index9-1.html">
-
+                                    环境贴图
                                 </a>
+                                <p>
+                                    使用CubeTextureLoader载入贴图
+                                    <br>
+                                    使用网孔材质MeshPhongMaterial定义材质，并将载入的贴图设置给envMap
+                                </p>
                             </li>
                         </ul>
                     </li>
@@ -857,28 +862,212 @@
                         <ul>
                             <li>
                                 <a href="./example/demo8/index10-1.html">
-
+                                    DataTexture (直接从原始数据和宽高来创建纹理。)
                                 </a>
+                                <p>
+                                    DataTexture( data, width, height, format, type, mapping, wrapS, wrapT, magFilter,
+                                    minFilter, anisotropy )<br>
+                                    data参数必须是一个ArrayBuffer或者类型数组。 其它参数继承自基类 纹理(Texture), magFilter 和 minFilter 都默认设置为
+                                    THREE.NearestFilter。flipY 和 generateMipmaps 属性默认设置为false。<br>
+                                    数据的解析取决于类型（type参数）和格式（format参数）: 如果type为THREE.UnsignedByteType,
+                                    那么就使用Uint8Array来获取纹理单元。 如果format为THREE.RGBAFormat, 那么data里面每4个值代表一个纹理单元（texel）; Red,
+                                    Green, Blue 和 Alpha (透明度)。类似的，THREE.RGBFormat 指定用3个值来表示一个纹理单元。<br>
+                                    对于包装的类型，THREE.UnsignedShort4444Type, THREE.UnsignedShort5551Type 或者
+                                    THREE.UnsignedShort565Type，一个纹理单元的所有颜色分量可以通过在一个Uint16Array整数元素里的位域来获取。<br>
+                                    要使用类型 THREE.FloatType 和 THREE.HalfFloatType, WebGL 的实现必须分别支持扩展 OES_texture_float 和
+                                    OES_texture_half_float。要对这些类型的双线性插值使用THREE.LinearFilter，必须有WebGL扩展
+                                    OES_texture_float_linear 和 OES_texture_half_float_linear 的支持。
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo8/index10-2.html">
+                                    创建RGBA数据
+                                </a>
+                                <p>
+                                    在设置材质时必须将MeshPhongMaterial的transparent属性设置为ture，允许透明，否则贴图的RGBA中的A的值会无效。
+                                </p>
                             </li>
                         </ul>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="./example/demo1/index.html">
+                <a>
                     相机对象(投影方式)
                 </a>
-                <p>
-                    笔记
-                </p>
+                <a href="https://blog.csdn.net/u014291990/article/details/103340453">正投影相机和透视投影相机解释</a>
+                <ul>
+                    <li>
+                        <a href="./example/demo9/index1-1.html">
+                            正投影相机(OrthographicCamera)：角度不同投影长度不同
+                        </a>
+                        <p>
+                            OrthographicCamera( left, right, top, bottom, near, far ) <br>
+                            left — 相机视椎体（Camera frustum）左面。 <br>
+                            right — 相机视椎体（Camera frustum）右面。 <br>
+                            top — 相机视椎体（Camera frustum）上面。 <br>
+                            bottom — 相机视椎体（Camera frustum）下面。 <br>
+                            near — 相机视椎体（Camera frustum）前面（靠近相机的这一面）。 <br>
+                            far — 相机视椎体（Camera frustum）后面（远离相机的这一面）。
+                        </p>
+                        <p>
+                            .setViewOffset ( fullWidth, fullHeight, x, y, width, height ) <br>
+                            fullWidth — 多视图设置的全宽 <br>
+                            fullHeight — 多视图设置的全高 <br>
+                            x — 副摄像头的水平偏移 <br>
+                            y — 副摄像头的垂直偏移 <br>
+                            width — 副摄像头宽度 <br>
+                            height — 副摄像头高度 <br>
+                            该方法用于在一个较大的视椎体中设置视图偏移。这对于多窗口或多监视器/多机设置是有用的。关于如何使用它，你可以查看 远景相机(PerspectiveCamera) 中的示例。 <br>
+                            <br>
+                            clearViewOffset () <br>
+                            清除视图偏移。 <br>
+                            <br>
+                            updateProjectionMatrix () <br>
+                            更新相机投影矩阵，必须在参数发生变化后调用。
+                        </p>
+                    </li>
+                    <li>
+                        <a href="./example/demo9/index2-1.html">
+                            透视投影相机(远景相机)PerspectiveCamera：位置不同投影长度不同
+                        </a>
+                        <p>
+                            进行远景投影的相机。
+                            远景投影，也称之为透视投影。这个是我们人眼观察世界的模式，
+                        </p>
+                        <p>
+                            PerspectiveCamera( fov, aspect, near, far ) <br>
+                            fov — 相机视锥体垂直视角 <br>
+                            aspect — 相机视锥体宽高比 <br>
+                            near — 相机视锥体近裁剪面 <br>
+                            far — 相机视锥体远裁剪面。
+                        </p>
+                        <p>
+                            属性（Properties） <br>
+                            #.fov：相机视锥体垂直视角，从下到上的观察角度。 <br>
+                            #.zoom：获取或设置相机缩放因子（zoom factor）。 <br>
+                            #.near：相机视锥体近裁剪面。 <br>
+                            #.far：相机视锥体远裁剪面。 <br>
+                            #.focus：焦点，用于立体视觉和场深度效果的目标距离。这个参数不影响投影矩阵，除非是使用立体摄影机。这个参数不影响投影矩阵，除非是使用立体摄影机。 <br>
+                            #.aspect：相机视锥体宽高比，等于窗口宽度除以窗口高度。 <br>
+                            #.view：视椎体窗口规格或null。 <br>
+                            #.filmGauge：用于较大坐标轴的胶片尺寸。默认为35（毫米）。这个参数不影响投影矩阵，除非.filmOffset设置为非零值。 <br>
+                            #.filmOffset：水平偏离中心偏移量，和.filmGauge同单位。
+                        </p>
+                    </li>
+                </ul>
             </li>
             <li>
-                <a href="./example/demo1/index.html">
+                <a>
                     点精灵、粒子系统
                 </a>
-                <p>
-                    笔记
-                </p>
+                <ul>
+                    <li>
+                        <a>
+                            精灵模型对象Sprite
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo10/index1-1.html">
+                                    精灵模型对象（需要使用精灵材质SpriteMaterial）
+                                </a>
+                                <p>
+                                    精灵平面（Sprite）是一个在3D场景中总是面对着相机的平面。
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo10/index1-2.html">
+                                    透视投影相机
+                                </a>
+                                <p>
+                                    由远到近的精灵展示效果，使用sprite.position.set设置面精灵位置
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo10/index1-3.html">
+                                    点模型
+                                </a>
+                                <p>
+                                    以可变大小的点形式来显示粒子的类。比如，如果使用 WebGL渲染器(WebGLRenderer)，粒子将使用 GL_POINTS 来显示。 <br>
+                                </p>
+                                <p>
+                                    Points( geometry, material ) <br>
+                                    geometry — 几何模型(Geometry) 的一个实例。一个几何模型(Geometry) 实例，其中每个顶点指定系统中的一个粒子的位置。 <br>
+                                    material — 材料(Material) 的一个实例(可选)。一个 材料(Material) 实力， 定义对象的外观。默认的是随机色彩的
+                                    点材料(PointsMaterial)。
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo10/index1-launcher.html">
+                                    粒子发射器
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo10/index1-tween.html">
+                                    使用tween动画
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo10/index1-4.html">
+                                    网格模型
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo10/index1-5.html">
+                                    线模型
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            中国城市PM2.5可视化案例
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo10/index2-1.html">
+                                    精灵模型对象
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo10/index2-2.html">
+                                    透视投影相机
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo10/index2-3.html">
+                                    点模型
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo10/index2-4.html">
+                                    网格模型
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./example/demo10/index2-5.html">
+                                    线模型
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./example/demo10/index1-3.html">
+                            树林效果
+                        </a>
+                        <p>
+
+                        </p>
+                    </li>
+                    <li>
+                        <a href="./example/demo10/index1-4.html">
+                            下雨场景效果模拟
+                        </a>
+                        <p>
+
+                        </p>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="./example/demo1/index.html">
