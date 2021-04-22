@@ -4,7 +4,7 @@
  * @Author: Kevin.Lee
  * @Date: 2021-04-09 09:51:07
  * @LastEditors: Kevin.Lee
- * @LastEditTime: 2021-04-13 19:50:17
+ * @LastEditTime: 2021-04-19 09:18:43
  * @FilePath: /maptalks.three-0.11.2/Users/lijinwen/study-p/doc/three-study/example/demo10/index1-launcher.html
  * Copyright (C) 2021 Kevin.Lee. All rights reserved.
 -->
@@ -48,7 +48,7 @@
             // 控制精灵大小，比如可视化中精灵大小表征数据大小
             sprite.scale.set(4, 4, 1); // 只需要设置x、y两个分量就可以
             let k = Math.random() - 0.5;
-            console.log(k)
+            // console.log(k)
             // 设置精灵模型位置，z轴的范围0~1000，便于观察随着距离变化，显示大小变化
             sprite.position.set(spriteX * k, 150 * k, 1000 * Math.random())
             return sprite
@@ -59,8 +59,7 @@
                 .to({
                     x: obj.position.x,
                     y: height,
-                    z: obj.position.z,
-                    opacity: 0.2
+                    z: obj.position.z
                 }, 6000)
                 .easing(TWEEN.Easing.Cubic.Out);
             tweenSpriteUP.start();
@@ -115,11 +114,19 @@
         renderer.setClearColor(0x000000, 1); //设置背景颜色
         document.body.appendChild(renderer.domElement); //body元素中插入canvas对象
 
+        let count = 0
+
         // 渲染函数
         function render() {
             renderer.render(scene, camera); //执行渲染操作
             launcher()
-            requestAnimationFrame(render); //请求再次执行渲染函数render，渲染下一帧
+            let rafId = requestAnimationFrame(render); //请求再次执行渲染函数render，渲染下一帧
+            count++
+            // console.log(rafId, count)
+            if (count > 500) {
+                // console.log(count)
+                cancelAnimationFrame(rafId)
+            }
         }
         render();
 

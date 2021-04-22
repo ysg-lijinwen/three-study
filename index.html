@@ -1001,6 +1001,9 @@
                                 <a href="./example/demo10/index1-launcher.html">
                                     粒子发射器
                                 </a>
+                                <p>
+                                    结合补间动画Tweenjs库、requestAnimationFrame()函数，在每一次渲染的时候，创建一个随机的Sprite精灵，执行动画，让精灵在y轴上变换位置，动画时间6秒。
+                                </p>
                             </li>
                             <li>
                                 <a href="./example/demo10/index1-tween.html">
@@ -1011,11 +1014,18 @@
                                 <a href="./example/demo10/index1-4.html">
                                     网格模型
                                 </a>
+                                <p>
+                                    使用材质：三角面(网格)渲染模式 MeshLambertMaterial MeshBasicMaterial <br>
+                                    模型：网格模型对象Mesh
+                                </p>
                             </li>
                             <li>
                                 <a href="./example/demo10/index1-5.html">
                                     线模型
                                 </a>
+                                <p>
+                                    使用材质LineBasicMaterial，创建线模型对象Line 构造函数：Line、LineLoop、LineSegments
+                                </p>
                             </li>
                         </ul>
                     </li>
@@ -1026,72 +1036,356 @@
                         <ul>
                             <li>
                                 <a href="./example/demo10/index2-1.html">
-                                    精灵模型对象
+                                    点精灵实现
                                 </a>
+                                <p>
+                                    使用TextureLoader载入贴图<br>
+                                    使用Group来包含所有精灵对象<br>
+                                    使用FileLoader来加载json数据<br>
+                                    使用SpriteMaterial材质创建Sprite对象，并将精灵对象加入group组<br>
+                                    通过sprite.scale及pm值适当缩放精灵大小，得到更好的效果<br>
+                                    获得城市坐标设置精灵模型对象的位置sprite.position.set(x,y,0)<br>
+                                    中国城市坐标整体的几何中心不在坐标原点，需要适当的平移，通过group.position.set对精灵组进行平移
+                                    使用scene.add(group)把精灵群组插入场景中<br>
+                                    需要注意的地方：我们需要调整相机的位置，以便沿着z轴进行观察，才能达到正常的可视效果。camera.position.set(0, 0, 200)<br>
+                                    可以通过设置OrbitControls的enableRotate的值为false来禁止旋转操作。
+                                </p>
                             </li>
                             <li>
                                 <a href="./example/demo10/index2-2.html">
-                                    透视投影相机
+                                    points模型只能表示位置
                                 </a>
+                                <p>
+                                    材质：PointsMaterial
+                                    使用Vector3表示一个城市坐标，并push到geometry.vertices中<br>
+                                    创建一个Points来表示一个pm圆点
+                                </p>
                             </li>
                             <li>
                                 <a href="./example/demo10/index2-3.html">
-                                    点模型
+                                    points模型只能表示位置2(代码纠正)
                                 </a>
+                                <p>
+                                    将固定参数到对象移到循环之外
+                                </p>
                             </li>
                             <li>
                                 <a href="./example/demo10/index2-4.html">
-                                    网格模型
+                                    CircleGeometry实现
                                 </a>
                             </li>
                             <li>
                                 <a href="./example/demo10/index2-5.html">
-                                    线模型
+                                    PlaneGeometry表示
                                 </a>
+                                <p>
+                                    PlaneGeometry(width : Float, height : Float, widthSegments : Integer, heightSegments
+                                    : Integer)<br>
+                                    width — 平面沿着X轴的宽度。默认值是1。<br>
+                                    height — 平面沿着Y轴的高度。默认值是1。<br>
+                                    widthSegments — （可选）平面的宽度分段数，默认值是1。<br>
+                                    heightSegments — （可选）平面的高度分段数，默认值是1。
+                                </p>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="./example/demo10/index1-3.html">
+                        <a href="./example/demo10/index3-1.html">
                             树林效果
                         </a>
                         <p>
-
+                            使用PlaneGeometry矩形平面制作草地<br>
+                            //设置纹理的重复模式
+                            texture.wrapS = THREE.RepeatWrapping;
+                            texture.wrapT = THREE.RepeatWrapping;<br>
+                            通过设置贴图的repeat，使图片在x,y轴方向重复<br>
+                            创建位置随机的精灵Sprite，贴图为树木。
                         </p>
                     </li>
                     <li>
-                        <a href="./example/demo10/index1-4.html">
+                        <a>
                             下雨场景效果模拟
                         </a>
-                        <p>
-
-                        </p>
+                        <ul>
+                            <li>
+                                <a href="./example/demo10/index4-1.html">
+                                    空间中随机生成静态的雨滴
+                                </a>
+                                <p>
+                                    生成随机位置的雨滴精灵Sprite
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo10/index4-2.html">
+                                    雨滴动态运动
+                                </a>
+                                <p>
+                                    // 每次渲染遍历雨滴群组，刷新频率30~60FPS，两帧时间间隔16.67ms~33.33ms<br>
+                                    // 每次渲染都会更新雨滴的位置，进而产生动画效果
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo10/index4-3.html">
+                                    站在雨中效果
+                                </a>
+                                <p>
+                                    // 每次渲染遍历雨滴群组，刷新频率30~60FPS，两帧时间间隔16.67ms~33.33ms<br>
+                                    // 每次渲染都会更新雨滴的位置，进而产生动画效果
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo10/index4-4.html">
+                                    匀速下落
+                                </a>
+                                <p>
+                                    使用Clock的getDelta方法得到两次渲染的时间间隔，根据这个时间间隔来设雨滴y坐标的变化（50 * t）
+                                </p>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="./example/demo1/index.html">
-                    相机对象(投影方式)
-                </a>
-                <p>
-                    笔记
-                </p>
-            </li>
-            <li>
-                <a href="./example/demo1/index.html">
+                <a>
                     帧动画模块
                 </a>
                 <p>
                     笔记
                 </p>
+                <ul>
+                    <li>
+                        <a href="./example/demo11/index1-1.html">
+                            编辑关键帧并解析播放
+                        </a>
+                        <p>
+                            KeyframeTrack：关键帧轨道(KeyframeTrack)是关键帧(keyframes)的定时序列, 它由时间和相关值的列表组成,
+                            用来让一个对象的某个特定属性动起来。<br>
+                            关键帧轨道(KeyframeTrack)中总是存在两个数组：times数组按顺序存储该轨道的所有关键帧的时间值，而values数组包含动画属性的相应更改值。<br>
+                            - 构造器<br>
+                            - KeyframeTrack( name : String, times : Array, values : Array, interpolation : Constant
+                            )<br>
+                            - name - 关键帧轨道(KeyframeTrack)的标识符.<br>
+                            - times - 关键帧的时间数组, 被内部转化为 Float32Array.<br>
+                            - values - 与时间数组中的时间点相关的值组成的数组, 被内部转化为 Float32Array.<br>
+                            - interpolation - 使用的插值类型。 参见 Animation Constants for possible values. Default
+                            isInterpolateLinear.<br>
+                            ------------<br>
+                            AnimationClip：动画剪辑（AnimationClip）是一个可重用的关键帧轨道集，它代表动画。
+
+                            构造器<br>
+                            AnimationClip( name : String, duration : Number, tracks : Array )<br>
+                            name - 此剪辑的名称<br>
+                            duration - 持续时间 (单位秒). 如果传入负数, 持续时间将会从传入的数组中计算得到。<br>
+                            tracks - 一个由关键帧轨道（KeyframeTracks）组成的数组。<br>
+
+                            说明: 与其直接调用构造函数实例化一个动画剪辑, 不如使用其静态方法中的一个来创建： 用JSON (parse),
+                            用变形目标序列(CreateFromMorphTargetSequence, CreateClipsFromMorphTargetSequences)或者用动画层级
+                            (parseAnimation)来创建 - 如果你的模型中几何体的动画数组中还没有保存动画剪辑的话。<br>
+                            -------------------<br>
+                            AnimationMixer：动画混合器是用于场景中特定对象的动画的播放器。当场景中的多个对象独立动画时，每个对象都可以使用同一个动画混合器。<br>
+                            构造器<br>
+                            AnimationMixer( rootObject : Object3D )<br>
+                            rootObject - 混合器播放的动画所属的对象，可传入group对象组<br>
+                            方法：<br>
+                            .clipAction (clip : AnimationClip, optionalRoot : Object3D) : AnimationAction
+                            返回所传入的剪辑参数的AnimationAction,
+                            根对象参数可选，默认值为混合器的默认根对象。第一个参数可以是动画剪辑(AnimationClip)对象或者动画剪辑的名称。<br>
+
+                            如果不存在符合传入的剪辑和根对象这两个参数的动作, 该方法将会创建一个。传入相同的参数多次调用将会返回同一个剪辑实例。<br>
+                            ------<br>
+                            在render()中更新混合器时间<br>
+                            //clock.getDelta()方法获得两帧的时间间隔<br>
+                            // 更新混合器相关的时间
+                            -------------------<br>
+                            AnimationAction：AnimationActions 用来调度存储在AnimationClips中的动画。<br>
+                            说明: AnimationAction的大多数方法都可以链式调用<br>
+                            构造器<br>
+                            AnimationAction( mixer : AnimationMixer, clip : AnimationClip, localRoot : Object3D )<br>
+                            mixer - 被此动作控制的 *动画混合器*<br>
+                            clip - *动画剪辑* 保存了此动作当中的动画数据<br>
+                            localRoot - 动作执行的根对象<br>
+                            说明: 不要直接调用这个构造函数，而应该先用AnimationMixer.clipAction实例化一个AnimationAction，因为这个方法提供了缓存以提高性能。
+                        </p>
+                    </li>
+                    <li>
+                        <a href="./example/demo11/index2-1.html">
+                            解析模型包含的帧动画
+                        </a>
+                        <p>
+                            使用ObjectLoader的load加载外部模型<br>
+                        </p>
+                    </li>
+                    <li>
+                        <a>
+                            编辑关键帧并解析播放
+                        </a>
+                        <p>
+
+                        </p>
+                        <ul>
+                            <li>
+                                <a href="./example/demo11/index3-1.html">
+                                    暂停继续
+                                </a>
+                                <p>
+                                    通过控制AnimationAction.paused的值来操作暂停/播放。paused置为true会通过将动作的有效时间比例改为0来使动作暂停执行。默认值是false
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo11/index3-2.html">
+                                    播放clip的特定时间段
+                                </a>
+                                <p>
+                                    // 设置播放区间10~18 关键帧数据总时间是20<br>
+                                    AnimationAction.time = 10; //操作对象设置开始播放时间<br>
+                                    clip.duration = 18; //剪辑对象设置播放结束时间。
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo11/index3-3.html">
+                                    定位在某个时间点
+                                </a>
+                                <p>
+                                    // 开始结束时间设置为一样，相当于播放时间为0，直接跳转到时间点对应的状态<br>
+                                    AnimationAction.time = 10; //操作对象设置开始播放时间<br>
+                                    clip.duration = AnimationAction.time; //剪辑对象设置播放结束时间。剪辑的持续时间 (单位秒).
+                                    可以通过resetDuration从轨道数组（tracks）计算出来。
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo11/index3-4.html">
+                                    按钮设置时间点
+                                </a>
+                                <p>
+                                    动态设置AnimationAction.time和clip.duration的值。
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo11/index3-5.html">
+                                    滚动条拖动
+                                </a>
+                                <p>
+                                    使用监听属性watch来监听滚动条值的变化，从而动态设置AnimationAction.time和clip.duration的值。
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </li>
             <li>
-                <a href="./example/demo1/index.html">
+                <a>
                     骨骼动画、变形动画
                 </a>
-                <p>
-                    笔记
-                </p>
+                <ul>
+                    <li>
+                        <a>
+                            骨骼动画原理
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo12/index1-1.html">
+                                    手动创建一个骨骼网格模型
+                                </a>
+                                <p>
+
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo12/index1-2.html">
+                                    骨骼网格模型设置动画
+                                </a>
+                                <p>
+
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            加载外部模型骨骼动画
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo12/index2-1.html">
+                                    查看骨骼数据
+                                </a>
+                                <p>
+
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo12/index2-2.html">
+                                    解析骨骼的帧动画数据
+                                </a>
+                                <p>
+
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            变形目标动画原理
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo12/index3-1.html">
+                                    创建一组变形目标数据
+                                </a>
+                                <p>
+
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo12/index3-2.html">
+                                    使用帧动画模块编辑播放
+                                </a>
+                                <p>
+
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            解析外部模型变形目标数据
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./example/demo12/index4-1.html">
+                                    解析变形目标数据
+                                </a>
+                                <p>
+
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo12/index4-2.html">
+                                    vue滑动条控制变形权重
+                                </a>
+                                <p>
+
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo12/index4-1.html">
+                                    解析播放帧动画
+                                </a>
+                                <p>
+
+                                </p>
+                            </li>
+                            <li>
+                                <a href="./example/demo12/index4-2.html">
+                                    变形目标生成帧动画
+                                </a>
+                                <p>
+
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="./example/demo1/index.html">
